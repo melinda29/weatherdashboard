@@ -83,3 +83,7 @@ body {
 
 .tempF, .windSpeedMph, .precipMm {
   display: none; }
+
+@media screen and (max-width: 768px) {
+  .weatherDescription, .currentDay {
+    text-align: left; } }
