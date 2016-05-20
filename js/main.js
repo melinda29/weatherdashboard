@@ -8,6 +8,9 @@ var getWeatherData = function() {
 	  dataType: 'json',
 	  url: url,
 	  method: 'GET',
+	  error: function() {
+          $('#info').html('<p>An error has occurred</p>');
+       },
 	  success: function (data) {
 	  	$('#loader').hide();
 	  	$('#weatherDataContainer').fadeIn(800);
@@ -54,17 +57,21 @@ $(function () {
 	getCurrentDate();
 
 	$('.Celsius').on('click', function() {
+		$(this).addClass('active');
+		$('.Fahrenheit').removeClass('active');
 		$('.tempC, .windSpeed, .precipIn').show();
 		$('.tempF, .windSpeedMph, .precipMm').hide();
 	});
 
 	$('.Fahrenheit').on('click', function() {
+		$(this).addClass('active');
+		$('.Celsius').removeClass('active');
 		$('.tempF, .windSpeedMph, .precipMm').show();
 		$('.tempC, .windSpeed, .precipIn').hide();
 	});
 
 	//REFRESH DATA
-	setInterval(function(){ 
-		//alert("Hello"); 
-	}, 3000);
+	/*setInterval(function(){ 
+		 
+	}, 3000);*/
 });

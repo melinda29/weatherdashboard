@@ -72,6 +72,12 @@ body {
     text-align: center;
     display: block;
 }
+.Fahrenheit, .Celsius {
+    color: #f90;
+}
+.Fahrenheit.active, .Celsius.active {
+    color: #000;
+}
 #weatherDetails .humidity {
   display: block;
 }
